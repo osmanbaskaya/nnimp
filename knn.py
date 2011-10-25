@@ -56,6 +56,7 @@ class KNeighborRegressor(BaseEstimator):
 
 class KNeighborClassifier(BaseEstimator):
      
+    #TODO : use *args & **kwds
     def __init__(self, X, y, k=3, sim_metric=sim_pearson, r_method='uniform'):
         super(KNeighborClassifier, self).__init__(X, y, k, sim_metric, r_method)
         print self
