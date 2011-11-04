@@ -14,6 +14,7 @@ TOL = 0.000000001
 
 class KNeighborRegressor(BaseEstimator):
     
+    #FIXME use kwargs!
     def __init__(self, X, y, k=3, sim_metric=sim_pearson, r_method='uniform'):
 
         super(KNeighborRegressor, self).__init__(X, y, k, sim_metric, r_method)
@@ -56,7 +57,7 @@ class KNeighborRegressor(BaseEstimator):
 
 class KNeighborClassifier(BaseEstimator):
      
-    #TODO : use *args & **kwds
+    #FIXME use kwargs
     def __init__(self, X, y, k=3, sim_metric=sim_pearson, r_method='uniform'):
         super(KNeighborClassifier, self).__init__(X, y, k, sim_metric, r_method)
         print self
@@ -82,7 +83,7 @@ class KNeighborClassifier(BaseEstimator):
                     try:
                         class_labels[label] += 1/distance 
                     except ZeroDivisionError:
-                        class_labels[label] += 1/(distance + TOL)
+                        class_labels[label] += 1 / TOL
                 else:
                     class_labels[label] = 1
 

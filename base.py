@@ -24,6 +24,7 @@ class BaseEstimator(object):
         # It should be compared whether sim_metric is correlation or
         # distance metric. If pearson`s correlation coeff. is picked
         # neighbors should be sorted by reverse order.
+        # TODO: I don't consider negative correlation samples yet!
         rev_order = BaseEstimator.ret_neighbors(self.sim_metric)
 
         #sorting by the distances.
